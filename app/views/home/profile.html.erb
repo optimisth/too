@@ -1,0 +1,34 @@
+<div class='profile'>
+  <div class='column'>
+    <h2>EDUCATION <br>& EXPERIENCE</h2>
+    <% @data1.each do |data| %>
+      <div class='row'>
+        <span><%= data.worked_at %></span>
+        <p><%= data.title %></p>
+      </div>
+    <% end %>
+  </div>
+  <div class='column'>
+    <h2>PROJECTS</h2>
+    <% @data2.each do |data| %>
+      <div class='row'>
+        <span><%= data.worked_at %></span>
+        <p><%= data.title %></p>
+      </div>
+    <% end %>
+  </div>
+  <div class='column'>
+    <h2>EXHIBITIONS</h2>
+    <% @data3.each do |data| %>
+      <div class='row'>
+        <span><%= data.worked_at %></span>
+        <p><%= data.title %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+<script>
+  $(document).ready(function() {
+    $('#m2').addClass("active");
+  });
+</script>

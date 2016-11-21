@@ -1,0 +1,32 @@
+<%= form_for([:admin, profile]) do |f| %>
+  <% if profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :list %>
+    <%= f.select :list, options_for_select([['EDUCATION & EXPERIENCE', 1], ['PROJECTS', 2], ['EXHIBITIONS', 3]], 1) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :worked_at %>
+    <%= f.text_area :worked_at %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_area :title %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

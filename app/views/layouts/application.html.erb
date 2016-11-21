@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>201</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
+
+
+  </head>
+
+  <body id='twooone'>
+
+    <div id='main-title'>
+      <%= image_tag 'logo.png', class: 'logo' %>
+    </div>
+    <div class='container-fluid <%= @is_work %>'>
+      <%= render 'home/main_header' %>
+      <div id='content'>
+        <%= yield %>
+      </div>
+    </div>
+    <footer id='twoone-footer'>
+      <%= image_tag 'all-rights.png', class: 'all-rights' %>
+    </footer>
+  </body>
+
+
+</html>

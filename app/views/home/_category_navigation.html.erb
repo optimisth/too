@@ -1,0 +1,7 @@
+<ul class='navigation-ul'>
+  <% Category.all.each_with_index do |category, index| %>
+    <li id="<%=type%>c<%=category.id%>">
+      <%= link_to category.title, home_category_path(category) %>
+    </li>
+  <% end %>
+</ul>

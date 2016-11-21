@@ -1,0 +1,20 @@
+<div class='contact'>
+  <div class='column'>
+    <h2>WEBSITE</h2>
+    <p><%= @website.html_safe %>
+  </div>
+  <div class='column'>
+    <h2>E-MAIL</h2>
+    <p><%= @email.html_safe %>
+  </div>
+  <div class='column'>
+    <h2>ADDRESS</h2>
+    <p><%= @address.html_safe %>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#m4').addClass("active");
+  });
+</script>

@@ -1,0 +1,24 @@
+<div id='category-navigation'>
+  <%= render 'home/category_navigation', type: "d" %>
+</div>
+<div class='work'>
+  <div class='images'>
+    <% @pictures.each do |picture| %>
+      <%= image_tag picture.avatar.thumb_large.url %>
+    <% end %>
+  </div>
+  <div class='row'>
+    <h1><%= @work.title.html_safe %></h1>
+    <span><%= @work.worked_at.html_safe %></span>
+  </div>
+  <p><%= @work.content %></p>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#mm3').addClass("active");
+    $('#md3').addClass("active");
+    $("#dc<%=@category.id%>").addClass("active");
+    $("#mc<%=@category.id%>").addClass("active");
+  });
+</script>

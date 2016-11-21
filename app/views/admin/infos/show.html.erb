@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Home:</strong>
+  <%= @info.home %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @info.website %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @info.email %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @info.address %>
+</p>
+
+<%= link_to 'Edit', edit_admin_info_path(@info) %> |
+<%= link_to 'Back', admin_infos_path %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Home</th>
+      <th>Website</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @infos.each do |info| %>
+      <tr>
+        <td><%= info.home %></td>
+        <td><%= info.website %></td>
+        <td><%= info.email %></td>
+        <td><%= info.address %></td>
+        <td><%= link_to 'Show', [:admin, info] %></td>
+        <td><%= link_to 'Edit', edit_admin_info_path(info) %></td>
+        <td><%= link_to 'Destroy', [:admin, info], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Info', new_admin_info_path %>

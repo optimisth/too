@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @work.category_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @work.title %>
+</p>
+
+<p>
+  <strong>Worked at:</strong>
+  <%= @work.worked_at %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @work.content %>
+</p>
+
+<p>
+  <strong>Pictures:</strong>
+  <% @work.pictures.each do |p| %>
+    <%= image_tag p.avatar_url, style: "max-width: 200px;" %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_admin_category_work_path(@category, @work) %> |
+<%= link_to 'Back', admin_category_works_path %>

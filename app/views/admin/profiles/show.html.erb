@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>List:</strong>
+  <%= @profile.list %>
+</p>
+
+<p>
+  <strong>Worked at:</strong>
+  <%= @profile.worked_at %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @profile.title %>
+</p>
+
+<%= link_to 'Edit', edit_admin_profile_path(@profile) %> |
+<%= link_to 'Back', admin_profiles_path %>

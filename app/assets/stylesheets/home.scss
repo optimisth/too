@@ -1,0 +1,515 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$twoone-bg-color: #fbf6f9;
+$twoone-main-color: #1798cf;
+$twoone-main-color2: #5f14a1;
+
+$twoone-main-border-width: 10px;
+$body-max-width: 764px;
+$nav-li-margin-right: 90px;
+
+$mobile-max-width: 768px;
+
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: $mobile-max-width) { @content; }
+  }
+  @if $media == desktop {
+    @media only screen and (min-width: $mobile-max-width + 1) { @content; }
+  }
+}
+
+.od {
+  @include respond-to(mobile) {
+    display: none !important;
+  }
+}
+
+.om {
+  @include respond-to(desktop) {
+    display: none !important;
+  }
+}
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+    font-family: 'Rubik', sans-serif;
+
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+body#twooone {
+  min-width: 1024px;
+  min-height: 100%;
+  margin: 0;
+  padding: 0 0 161px 0;
+  background-color: $twoone-bg-color;
+  border: solid $twoone-main-border-width $twoone-main-color;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: relative;
+  @include respond-to(mobile) {
+    min-width: 320px;
+    border-width: 5px;
+    padding-bottom: 65px;
+  }
+  .container-fluid {
+    max-width: $body-max-width;
+    margin: 0 auto;
+    @include respond-to(mobile) {
+      padding: 0 40px;
+    }
+  }
+  .container-fluid-category {
+    @include respond-to(mobile) {
+      padding: 0 !important;
+    }
+  }
+  .home {
+    margin: 0;
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.2px;
+    color: $twoone-main-color2;
+    white-space: pre-line;
+    @include respond-to(mobile) {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.6;
+      letter-spacing: 0.3px;
+    }
+  }
+  .profile {
+    overflow: hidden;
+    @include respond-to(mobile) {
+      display: inline-block;
+    }
+    .column {
+      float: left;
+      width: 33.3%;
+      @include respond-to(mobile) {
+        float: none;
+        width: auto;
+        margin-bottom: 15px;
+        text-align: left;
+      }
+      h2 {
+        font-size: 20px;
+        height: 48px;
+        letter-spacing: 0.2px;
+        margin: 0 0 32px 0;
+        color: $twoone-main-color2;
+        font-weight: normal;
+        @include respond-to(mobile) {
+          font-size: 12px;
+          height: 18px;
+          line-height: 1.5;
+	        letter-spacing: 0.1px;
+          margin: 0 0 15px 0;
+          br {
+            display: none;
+          }
+        }
+      }
+      .row {
+        margin-bottom: 30px;
+        @include respond-to(mobile) {
+          margin-bottom: 10px;
+        }
+        span {
+          display: block;
+          height: 32px;
+          font-size: 24px;
+          font-weight: 500;
+          line-height: 1.3;
+          letter-spacing: 0.1px;
+          margin-bottom: 10px;
+          color: $twoone-main-color2;
+          @include respond-to(mobile) {
+            font-size: 16px;
+            line-height: 1.38;
+            letter-spacing: 0.2px;
+            height: auto;
+            margin-bottom: 0;
+          }
+        }
+        p {
+          font-size: 24px;
+          line-height: 1.3;
+          letter-spacing: 0.1px;
+          color: #5f14a1;
+          margin: 0;
+          @include respond-to(mobile) {
+            font-size: 16px;
+            line-height: 1.38;
+            letter-spacing: 0.2px;
+          }
+        }
+      }
+    }
+  }
+  .category {
+    .works {
+      .work-item {
+        overflow: hidden;
+        @include respond-to(mobile) {
+          margin-bottom: 20px;
+        }
+        .image {
+          float: left;
+          width: 460px;
+          height: 150px;
+          position: relative;
+          background-size: cover;
+          background-position: center center;
+          background-repeat: no-repeat;
+          margin-right: 54px;
+          @include respond-to(mobile) {
+            width: 100%;
+            height: 0px;
+            padding-bottom: 22.5807%;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+          }
+        }
+        h3.title {
+          width: 250px;
+          float: left;
+          font-size: 28px;
+          font-weight: 500;
+          line-height: 1.3;
+          letter-spacing: 0.1px;
+          color: #5f14a1;
+          margin: 0;
+          @include respond-to(mobile) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .work {
+    .images {
+      margin-bottom: 46px;
+      img {
+        max-width: 100%;
+        display: block;
+        margin-bottom: 10px;
+        @include respond-to(mobile) {
+          margin-bottom: 5px;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .row {
+      overflow: hidden;
+      margin-bottom: 46px;
+      @include respond-to(mobile) {
+        padding: 0 40px;
+        margin-bottom: 20px;
+      }
+      h1 {
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 1.3;
+        letter-spacing: 0.1px;
+        color: #5f14a1;
+        margin: 0 84px 0 0 ;
+        float: left;
+        white-space: pre-line;
+        @include respond-to(mobile) {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 1.38;
+          letter-spacing: 0.1px;
+          margin-right: 30px;
+        }
+      }
+      span {
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 1.3;
+        letter-spacing: 0.1px;
+        color: #5f14a1;
+        float: left;
+        white-space: pre-line;
+        @include respond-to(mobile){
+          font-size: 16px;
+        	font-weight: 500;
+        	line-height: 1.38;
+        	letter-spacing: 0.1px;
+        }
+      }
+    }
+    p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.5;
+      letter-spacing: 0.2px;
+      color: #5f14a1;
+      @include respond-to(mobile) {
+        padding: 0 40px;
+      }
+    }
+  }
+  .contact {
+    overflow: hidden;
+    @include respond-to(mobile) {
+      margin-top: 18px;
+      text-align: center;
+    }
+    .column {
+      float: left;
+      width: 33.3%;
+      @include respond-to(mobile) {
+        float: none;
+        width: auto;
+        margin-bottom: 15px;
+      }
+      h2 {
+        height: 52px;
+        font-size: 38px;
+        font-weight: 500;
+        line-height: 1.4;
+        letter-spacing: 0.2px;
+        margin: 0 0 10px 0;
+        color: $twoone-main-color2;
+        text-decoration: underline;
+        @include respond-to(mobile) {
+          font-size: 20px;
+        	line-height: 1.6;
+        	letter-spacing: 0.3px;
+          height: auto;
+          margin-bottom: 15px;
+        }
+      }
+      p {
+        font-size: 38px;
+        line-height: 1.4;
+        letter-spacing: 0.2px;
+        margin: 0;
+        color: $twoone-main-color2;
+        white-space: pre-line;
+        @include respond-to(mobile) {
+          font-size: 20px;
+        	line-height: 1.6;
+        	letter-spacing: 0.3px;
+          white-space: inherit;
+        }
+      }
+    }
+  }
+}
+
+#main-header {
+  overflow: hidden;
+}
+
+#main-title {
+  max-width: 759.9px;
+  height: 159px;
+  img.logo {
+    width: 100%;
+    margin: -10px 0 0 -10px;
+    @include respond-to(mobile) {
+      margin: -1px 0 0 -1px;
+    }
+  }
+  @include respond-to(mobile) {
+      height: auto;
+  }
+}
+
+#navigation {
+  margin-top: 27px;
+  @include respond-to(mobile) {
+    margin-top: 17px;
+    margin-bottom: 18px;
+  }
+  .menu-open {
+    display: none;
+    @include respond-to(mobile) {
+      display: block;
+      width: 59px;
+    	height: 24px;
+    	font-size: 20px;
+    	font-weight: 500;
+    	letter-spacing: 0.3px;
+    	text-align: center;
+    	color: #147ab9;
+      text-decoration: underline;
+      margin: 0 auto;
+    }
+  }
+  &>ul.navigation-ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin: 0 0 28px 0;
+    @include respond-to(desktop) {
+      display: block !important;
+    }
+    @include respond-to(mobile) {
+      display: none;
+      margin-top: 30px;
+    }
+    &>li {
+      display: inline-block;
+      margin-right: $nav-li-margin-right;
+      text-align: left;
+      width: 120px;
+      padding-bottom: 15px;
+      border-bottom: solid 3px transparent;
+      @include respond-to(mobile) {
+        display: block;
+        margin: 0 auto;
+      	font-size: 20px;
+      	font-weight: 500;
+      	letter-spacing: 0.3px;
+        border: none !important;
+        width: auto;
+        text-align: center;
+        padding-bottom: 30px;
+        br {
+          display: none;
+        }
+      }
+      &:last-child {
+        @include respond-to(desktop) {
+            margin-right: 0;
+        }
+      }
+      a {
+        font-size: 22px;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+        color: #147ab9;
+        text-decoration: none;
+      }
+      &.active, &:hover, &focus {
+        border-bottom: solid 3px $twoone-main-color2;
+        a {
+          color: $twoone-main-color2;
+        }
+      }
+    }
+  }
+}
+
+#category-navigation {
+  @include respond-to(mobile) {
+    display: none;
+  }
+  &>ul.navigation-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 52px 0;
+    li {
+      display: inline-block;
+      margin-right: 90px;
+      width: 120px;
+      padding-bottom: 10px;
+      border-bottom: solid 3px transparent;
+      a {
+        height: 24px;
+        font-size: 20px;
+        letter-spacing: 0.2px;
+        color: #147ab9;
+        text-decoration: none;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover, &:focus {
+        a {
+          color: #9b9b9b;
+        }
+      }
+      &.active {
+        border-bottom: solid 3px #5f14a1;
+        a {
+          color: #5f14a1;
+        }
+        &:hover, &:focus {
+          a {
+            color: #5f14a1;
+          }
+        }
+      }
+    }
+  }
+}
+
+#mobile-category-navigation {
+  @include respond-to(desktop) {
+    display: none !important;
+  }
+  @include respond-to(mobile) {
+    display: none;
+    ul.navigation-ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 16px;
+      li a{
+        font-size: 18px !important;
+      	font-weight: normal !important;
+      	line-height: 1.78 !important;
+      	letter-spacing: 0.3px !important;
+        color: $twoone-main-color !important;
+      }
+      li.active {
+        a {
+          color: $twoone-main-color2 !important;
+        }
+      }
+    }
+  }
+}
+
+#content {
+  @include respond-to(desktop) {
+    display: block !important;
+  }
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+}
+
+footer#twoone-footer {
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+  width: 316px;
+  font-size: 0;
+  @include respond-to(mobile) {
+    width: 123px;
+  }
+  img.all-rights {
+    width: 100%;
+  }
+}
+
+#mm3.active {
+  #mobile-category-navigation {
+    display: block;
+  }
+}

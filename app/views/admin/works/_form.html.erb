@@ -1,0 +1,44 @@
+<%= form_for([:admin, @category, work], :html => { :multipart => true}) do |f| %>
+  <% if work.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(work.errors.count, "error") %> prohibited this work from being saved:</h2>
+
+      <ul>
+      <% work.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :category_id %>
+    <%= f.number_field :category_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_area :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :worked_at %>
+    <%= f.text_area :worked_at %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <%= f.fields_for :pictures do |p| %>
+    <div class="field">
+      <%= p.label :avatar %><br>
+      <%= p.file_field :avatar, :multiple => true, name: "pictures[avatar][]" %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
