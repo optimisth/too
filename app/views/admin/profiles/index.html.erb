@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Profiles</h1>
+<h1>Profile 리스트</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Type</th>
+      <th>종류</th>
       <th>Worked at</th>
       <th>Title</th>
       <th colspan="3"></th>
@@ -15,12 +15,11 @@
   <tbody>
     <% @profiles.each do |profile| %>
       <tr>
-        <td><%= profile.list %></td>
+        <td><%= @types[profile.list] %></td>
         <td><%= profile.worked_at %></td>
         <td><%= profile.title %></td>
-        <td><%= link_to 'Show', [:admin, profile] %></td>
-        <td><%= link_to 'Edit', edit_admin_profile_path(profile) %></td>
-        <td><%= link_to 'Destroy', [:admin, profile], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '수정하기', edit_admin_profile_path(profile) %></td>
+        <td><%= link_to '삭제하기', [:admin, profile], method: :delete, data: { confirm: '정말 삭제하겠습니까?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Profile', new_admin_profile_path %>
+<%= link_to '새 Profile 생성', new_admin_profile_path %>

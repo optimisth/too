@@ -1,0 +1,36 @@
+<div id='main-header'>
+  <div id='navigation'>
+    <div id='menu-open' class='menu-open' onclick='openMenu()'>
+      MENU
+    </div>
+    <ul class='navigation-ul' id='main-menu'>
+      <li id='m1'><%= link_to '01. <br>Home &<br>Contact'.html_safe, admin_root_path %></li>
+      <li id='m2'><%= link_to '02. <br>PROFILE<br>관리'.html_safe, admin_profiles_path %></li>
+      <li id='md3' class='od'><%= link_to '03. <br>CATEGORIES<br>관리'.html_safe, admin_categories_path %>
+      </li>
+      <li id='mm3' class='om'><%= link_to '03. <br>WORKS'.html_safe, 'javascript:openWorks();' %>
+        <div id='mobile-category-navigation'>
+          <%= render 'home/category_navigation', type: "m" %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  function openMenu() {
+    $("#menu-open").attr("onclick", "closeMenu()");
+    $("#content").hide();
+    $("#main-menu").show();
+  }
+
+  function closeMenu() {
+    $("#menu-open").attr("onclick", "openMenu()");
+    $("#content").show();
+    $("#main-menu").hide();
+  }
+
+  function openWorks() {
+    $("#mobile-category-navigation").show();
+  }
+</script>

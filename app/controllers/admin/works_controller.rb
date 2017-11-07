@@ -1,4 +1,4 @@
-class Admin::WorksController < ApplicationController
+class Admin::WorksController < AdminController
   before_action :set_category
   before_action :set_work, only: [:show, :edit, :update, :destroy]
 

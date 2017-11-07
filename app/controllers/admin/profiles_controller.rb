@@ -1,9 +1,15 @@
-class Admin::ProfilesController < ApplicationController
+class Admin::ProfilesController < AdminController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   # GET /profiles
   # GET /profiles.json
   def index
+    @types = [
+      "",
+      "E&E",
+      "PROJ",
+      "EXB"
+    ]
     @profiles = Profile.all
   end
 

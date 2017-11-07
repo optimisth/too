@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @category.title %> Works</h1>
+<h1><%= @category.title %>의 Work 리스트</h1>
 
 <table>
   <thead>
@@ -20,9 +20,8 @@
         <td><%= work.title %></td>
         <td><%= work.worked_at %></td>
         <td><%= work.content %></td>
-        <td><%= link_to 'Show', [:admin, @category, work] %></td>
-        <td><%= link_to 'Edit', edit_admin_category_work_path(@category, work) %></td>
-        <td><%= link_to 'Destroy', [:admin, @category, work], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '수정하기', edit_admin_category_work_path(@category, work) %></td>
+        <td><%= link_to '삭제하기', [:admin, @category, work], method: :delete, data: { confirm: '정말 삭제하겠습니까?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Work', new_admin_category_work_path %>
+<%= link_to '새 Work 생성', new_admin_category_work_path %>
