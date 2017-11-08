@@ -59,6 +59,7 @@ body#twooone {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   position: relative;
+  transition: border 0.5s ease-in-out;
   @include respond-to(mobile) {
     min-width: 320px;
     border-width: 5px;
@@ -327,9 +328,9 @@ body#twooone {
   height: 159px;
   img.logo {
     width: 100%;
-    margin: -10px 0 0 -10px;
+    margin: -2px 0 0 0;
     @include respond-to(mobile) {
-      margin: -1px 0 0 -1px;
+      margin: -2px 0 0 0px;
     }
   }
   @include respond-to(mobile) {
